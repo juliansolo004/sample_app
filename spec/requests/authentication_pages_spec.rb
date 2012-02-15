@@ -34,6 +34,7 @@ describe "Authentication" do
       it {should have_link('Profile', href: user_path(user) )}
       it {should have_link('Sign out', href: signout_path)}
       it {should_not have_link('Sign in', href: signin_path)}
+      it {should have_selector('div.flash.success', text: "Welcome back!")}
       
       describe "followed by signout" do 
         before {click_link "Sign out"}
